@@ -1,0 +1,38 @@
+'This VBA macro is designed to be executed within an Excel workbook. When assigned to a button on an Excel worksheet, it prompts the user to enter their grade. Based on the input, it then determines and displays whether the user has passed or not.
+
+Here's a step-by-step explanation of how the code works:
+
+1. **Open a New Input Box**: When the button associated with this macro is clicked, an input box is displayed, prompting the user to enter their grade.
+2. **Capture User Input**: The grade entered by the user is captured and stored in a variable.
+3. **Evaluate the Grade**: The macro evaluates the entered grade to determine if it meets the passing criteria.
+4. **Display the Result**: A message box is then displayed, informing the user whether they have passed or not based on the entered grade.
+
+To use this macro, follow these steps:
+
+1. Open your Excel workbook.
+2. Insert a button (Form Control) onto your worksheet.
+3. Assign this macro to the button.
+4. Click the button to run the macro and interact with the input and message boxes.
+
+This macro enhances the interactivity of your Excel workbook by providing immediate feedback on grade evaluations.'
+
+Sub CheckGrade_Click()
+    Dim grade As String
+    Dim passingGrade As Integer
+
+    
+    passingGrade = 70
+
+    grade = InputBox("What is Your Grade?")
+
+        If IsNumeric(grade) Then
+        If CInt(grade) >= passingGrade Then
+            MsgBox "Congratulations, you passed!"
+        Else
+            MsgBox "Sorry, you did not pass."
+        End If
+    Else
+        MsgBox "Please enter a valid numeric grade."
+    End If
+End Sub
+
